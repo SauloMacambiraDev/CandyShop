@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Candy Shop";
+    //ViewBag.CurrentCategory = "Bestsellers";
+}
+
+@model CandyListViewModel
+
+<h1>@Model.CurrentCategory</h1>
+
+<div class="grid-candy">
+    @foreach (var candy in @Model.Candies)
+    {
+        <partial name="_CandyCard" model="candy"/>
+    }
+</div>

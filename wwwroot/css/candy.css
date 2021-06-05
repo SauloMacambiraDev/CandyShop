@@ -1,0 +1,58 @@
+﻿.grid-candy {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
+.grid-candy .card-candy {
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.75);
+}
+
+.grid-candy .card-candy img {
+    width: 100%;
+    object-fit: cover;
+}
+.grid-candy .card-candy .card-candy-body {    
+    padding: 1.5rem;
+}
+
+.grid-candy .card-candy .card-candy-body h3 {
+    font-size: 1rem;
+    overflow: hidden;
+    height: 38px;
+}
+grid-candy .card-candy .card-candy-body h4 {
+    font-size: .8rem;
+    height: 1rem;
+
+}
+
+.grid-candy .card-candy .card-candy-body p {
+    max-height: 80px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.grid-candy .card-candy .card-candy-footer {
+    border-top: 1px solid #F6F6F6;
+    margin-top: 0;
+    padding: .5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .grid-candy .card-candy .card-candy-footer button + button {
+        margin-left: 1rem;
+        background-color: #F06C9B;
+        transition: all .4s;
+        outline: none;
+        border: none;
+    }
+
+        .grid-candy .card-candy .card-candy-footer button + button:hover {
+            background-color: #f73e80;
+        }

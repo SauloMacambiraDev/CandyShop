@@ -1,0 +1,57 @@
+﻿
+div#carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+div#carousel-wrapper div#carousel-items {
+    display: flex;
+    overflow-x: hidden;
+    /*scroll-snap-type indicates that the child components will scroll in a way on axis 'x' and it is mandatory*/
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+div#carousel-wrapper div#carousel-items div.carousel-item-content {
+    width: 100%;
+    height: 400px;
+    flex: none;
+    /*'scroll-snap-align' will align the component to its parent, scrolling automatically to the beginning*/
+    scroll-snap-align: start;
+
+    pointer-events: none;
+}
+
+div#carousel-wrapper div#carousel-items div.carousel-item-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*BUTTONS OF CAROUSEL*/
+
+button.button-carousel {
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    transform: translateY(-50%);
+    border: none;
+}
+
+button.button-carousel img {
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+}
+
+button#move-carousel-left {
+    top: 50%;
+    left: 0px;
+}
+
+button#move-carousel-right {
+    top: 50%;
+    right: 0px;
+}

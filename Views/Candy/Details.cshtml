@@ -1,0 +1,23 @@
+﻿@{ 
+    ViewData["Title"] = $"Candy Detail {Model.Name}";
+}
+
+@model Candy
+
+
+<div class="card-detail-container">
+    <div class="card-detail-header">
+        <a asp-controller="Candy" asp-action="Index">
+            <img src="~/Icons/arrow-back.png" alt="Arrow to the Left" />
+        </a>
+        <h1>Candy @Model.Name</h1>
+    </div>
+    <div class="card-detail-body">
+        <img src="@Model.ImageUrl" alt="@Model.Name" />
+        <h3>@Model.Name</h3>
+        <h4>@Model.Price.ToString("c")</h4>
+        <p>@Model.Description</p>
+        <button>BUY</button>
+    </div>
+</div>
+

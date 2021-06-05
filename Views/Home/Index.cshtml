@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IEnumerable<Candy>
+
+<div id="carousel-wrapper">
+    <button class="button-carousel" id="move-carousel-left">
+        <img src="~/Icons/arrow-left-black.png" alt="Move Carousel to Left" />
+    </button>
+
+    <button class="button-carousel" id="move-carousel-right">
+        <img src="~/Icons/arrow-right-black.png" alt="Move Carousel to Right" />
+    </button>
+
+
+    <div id="carousel-items">
+        <div class="carousel-item-content">
+            <img src="~/Images/carousel1.jpg" alt="Candy" />
+        </div>
+        <div class="carousel-item-content">
+            <img src="~/Images/carousel2.jpg" alt="Candy" />
+        </div>
+        <div class="carousel-item-content">
+            <img src="~/Images/carousel3.jpg" alt="Candy" />
+        </div>
+    </div>
+</div>
+
+<div class="header-candies-on-sale">
+    <h1>CANDIES ON SALE</h1>
+    <a asp-area="" asp-controller="Candy" asp-action="Index">Go To Candy Shop!</a>
+</div>
+<div class="grid-candy">
+    @foreach(var candy in Model)
+    {
+        <partial name="_CandyCard" model="candy" />
+    }
+</div>
+
+>
+
+@section Scripts {
+    <script src="~/js/carousel.js"></script>
+}
