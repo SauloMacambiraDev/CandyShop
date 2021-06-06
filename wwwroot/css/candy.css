@@ -40,19 +40,23 @@ grid-candy .card-candy .card-candy-body h4 {
     margin-top: 0;
     padding: .5rem 1.5rem 1.5rem;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-    .grid-candy .card-candy .card-candy-footer button + button {
-        margin-left: 1rem;
+    .grid-candy .card-candy .card-candy-footer a {
+        width: 45%;
+        font: 700 .75rem Roboto;
+        padding: 1rem 0;
+    }
+
+    .grid-candy .card-candy .card-candy-footer a + a {
         background-color: #F06C9B;
         transition: all .4s;
         outline: none;
         border: none;
     }
 
-        .grid-candy .card-candy .card-candy-footer button + button:hover {
-            background-color: #f73e80;
-        }
+.grid-candy .card-candy .card-candy-footer a + a:hover {
+    background-color: #f73e80;
+}

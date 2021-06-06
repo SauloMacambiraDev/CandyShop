@@ -1,4 +1,5 @@
 using CandyShop.Data;
+using CandyShop.Models;
 using CandyShop.Models.Interfaces;
 using CandyShop.Models.Persistences;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +38,13 @@ namespace CandyShop
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
+            services.AddScoped<ShoppingCart>(services => ShoppingCart.GetCart(services));
+
+            //Enable application to get HttpContext through dependecy injection
+            //This funcionality is necessary in order to ShoppingCart class pursuit the
+            //Session that exist in an HTTP Request by reading Cookies
+            services.AddHttpContextAccessor();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,11 +62,12 @@ namespace CandyShop
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession(); // it has to be setted before routing managment 'UseRouting()'
 
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

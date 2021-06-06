@@ -9,7 +9,11 @@
 
     </div>
     <div class="card-candy-footer">
-        <button class="btn btn-primary">BUY</button>
-        <a asp-controller="Candy" asp-action="Details" asp-route-id="@Model.CandyId" class="btn btn-success">TAKE A LOOK</a>
+        <a 
+           asp-controller="ShoppingCart" 
+           asp-action="AddToShoppingCart" 
+           asp-route-candyId="@Model.CandyId"
+           class="btn btn-primary">ADD</a>
+        <a asp-controller="Candy" asp-action="Details" asp-route-id="@Model.CandyId" class="btn btn-success">DETAILS</a>
     </div>
 </div>
