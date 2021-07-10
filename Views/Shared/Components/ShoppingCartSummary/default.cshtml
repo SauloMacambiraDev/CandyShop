@@ -1,0 +1,13 @@
+﻿@model ShoppingCartViewModel
+
+@if(Model.ShoppingCart.ShoppingCartItems.Count > 0)
+{
+    <li style="display: flex; align-items: center; padding: 0 .5rem;">
+        <a style="display: flex; align-items: center; text-decoration: none;" asp-controller="ShoppingCart" asp-action="Index">
+            <img style="height: 16px; width: 16px; object-fit: contain; margin-right: .5rem;" src="~/Icons/cart-70-64.png"/>
+            <span style="font-weight: 500; font-size: 1rem; color:#121416;">
+                @Model.ShoppingCart.ShoppingCartItems.Count
+            </span>
+        </a>
+    </li>
+} 

@@ -390,3 +390,6 @@ C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debu
 C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\Shared\_CandyCard.cshtml.g.cs
 C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
 C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\Shared\Components\ShoppingCartSummary\default.cshtml.g.cs
+C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryMenu\default.cshtml.g.cs
+C:\Users\saulomacambira\Documents\workspace\ASP NET Workspace\CandyShop\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs

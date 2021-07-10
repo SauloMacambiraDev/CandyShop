@@ -27,6 +27,7 @@ namespace CandyShop.Models
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
             session.SetString("CartId", cartId);
 
+
             return new ShoppingCart(dbContext)
             {
                 ShoppingCartId = cartId

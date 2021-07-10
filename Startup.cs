@@ -4,6 +4,7 @@ using CandyShop.Models.Interfaces;
 using CandyShop.Models.Persistences;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,12 +40,33 @@ namespace CandyShop
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
             services.AddScoped<ShoppingCart>(services => ShoppingCart.GetCart(services));
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            /* We could do that by doing it
+                services.AddScoped<ShoppingCart>(services =>
+                {
+                    ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+                    CandyShopDbContext db = services.GetRequiredService<CandyShopDbContext>();
+                    string shoppingCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+                    session.SetString("CartId", shoppingCartId);
+
+                    return new ShoppingCart(db)
+                    {
+                        ShoppingCartId = shoppingCartId
+                    };
+                });
+            */
 
             //Enable application to get HttpContext through dependecy injection
             //This funcionality is necessary in order to ShoppingCart class pursuit the
             //Session that exist in an HTTP Request by reading Cookies
             services.AddHttpContextAccessor();
-            services.AddSession();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(300); // How much time the session can be idle before its contents are abandoned.
+                options.Cookie.Name = ".CandyShop.Session";
+                options.Cookie.HttpOnly = true; // Cannot be manipulated or accessed on ClientSide
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -17,6 +17,11 @@ namespace CandyShop.ViewModels
         {
             Candies = candies;
         }
-        
+
+        public CandyListViewModel(IEnumerable<Candy> candies, string currentCategory)
+        {
+            Candies = candies;
+            CurrentCategory = currentCategory;
+        }
     }
 }
