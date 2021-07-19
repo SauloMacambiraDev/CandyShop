@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CandyShop.TagHelpers
 {
+    // Example: <email address="info@candyshop.com" link-text="contact-us"></email>
     public class EmailTagHelper : TagHelper
     {
         public string Address { get; set; }
